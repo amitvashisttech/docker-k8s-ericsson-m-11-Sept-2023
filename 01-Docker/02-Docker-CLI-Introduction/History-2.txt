@@ -123,3 +123,20 @@
   155  cd 02-Docker-CLI-Introduction/
   156  ls
   157  history > History-2.txt 
+
+
+
+## Format Command
+
+ 96  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' test-1
+   97  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -q) 
+   98  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa) 
+   99  docker run ubuntu
+  100  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa) 
+  101  docker kill test-1
+  102  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa) 
+  103  docker run -itd --name test-4 ubuntu top 
+  104  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa) 
+  105  docker start test-1
+  106  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -qa) 
+  107  docker inspect test-1

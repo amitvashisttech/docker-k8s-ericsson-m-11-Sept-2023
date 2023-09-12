@@ -1,0 +1,105 @@
+  110  mkdir 03-DockerImages
+  111  ls
+  112  cd 03-DockerImages/
+  113  ls
+  114  mkdir apache/v1 -p 
+  115  ls
+  116  cd ..
+  117  ls
+  118  apt-get install tree -y 
+  119  ls
+  120  cd 03-DockerImages/
+  121  tree . 
+  122  cd apache/v1/
+  123  ls
+  124  docker run -it ubuntu 
+  125  ls
+  126  cat Dockerfile 
+  127  docker build -t my-apache .
+  128  docker images 
+  129  docker ps 
+  130  docker kill $(docker ps -q) 
+  131  docker rm $(docker ps -aq) 
+  132  docker images 
+  133  docker ps 
+  134  docker run -d my-apache
+  135  docker ps 
+  136  docker inspect 0d6e323087ab
+  137  curl 172.17.0.2
+  138  ls
+  139  docker images 
+  140  docker tag 21ba1c8f5d2d my-apache:v1
+  141  docker images 
+  142  curl 172.17.0.2
+  143  s
+  144  ls
+  145  cd ..
+  146  ls
+  147  cp -rf v1 v2 
+  148  cd ..
+  149  tree . 
+  150  ls
+  151  cd apache/
+  152  ls
+  153  cd v2/
+  154  ls
+  155  docker build -t my-apache:v2 .
+  156  docker images 
+  157  docker run -d --name test-2  my-apache:v2 
+  158  docker ps 
+  159  curl 172.17.0.2
+  160  curl 172.17.0.3
+  161  curl 172.17.0.3/info.html 
+  162  docker images 
+  163  docker inspect dd9c0b6c7ae5
+  164  ls
+  165  cd ..
+  166  ls
+  167  cp -rf v2 v3 
+  168  ls
+  169  cd v3/
+  170  ls
+  171  cat index.html 
+  172  docker build -t my-apache:v3 .
+  173  docker build -t my-apache:v3 -f MyDockerfile .
+  174  docker images 
+  175  docker run -d --name test-3  my-apache:v3
+  176  docker ps 
+  177  curl 172.17.0.3/info.html 
+  178  curl 172.17.0.4/info.html 
+  179  curl -v 172.17.0.4/info.html 
+  180  docker ps 
+  181  docker images 
+  182  ls
+  183  cd ..
+  184  ls
+  185  cp -rf v3 v4
+  186  ls
+  187  cd v4/
+  188  ls
+  189  vim index.html 
+  190  ls
+  191  docker build -t my-apache:v4 -f MyDockerfile .
+  192  docker run -d --name test-4  my-apache:v4
+  193  docker ps 
+  194  curl -v 172.17.0.5:80/info.html 
+  195  docker ps 
+  196  docker inspect my-apache:v4
+  197  docker inspect my-apache:v4 | grep -i 80 
+  198  docker inspect my-apache:v4 | grep -i expose
+  199  docker inspect my-apache:v4 | grep -iA2 expose
+  200  ls
+  201  cd ..
+  202  ls
+  203  cp -rf v4 v5
+  204  ls
+  205  cd v5/
+  206  docker build -t my-apache:v5 -f MyDockerfile .
+  207  docker run -d --name test-5  my-apache:v5
+  208  docker ps 
+  209  curl -v 172.17.0.6:80/info.html 
+  210  curl -v 172.17.0.6:3306/info.html 
+  211  ls
+  212  cd ..
+  213  ls
+  214  history > history.txt 

@@ -1,0 +1,17 @@
+# Base Image 
+FROM ubuntu
+
+# Update the APT Repo.
+RUN apt-get update 
+
+# Install Apache Packages 
+RUN apt-get install apache2 -y 
+
+# Deploy a Custom Web Page
+COPY index.html /var/www/html/info.html 
+
+# My App Listen to Following Port
+EXPOSE 80
+
+# Bring up my apache app.
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"] 
