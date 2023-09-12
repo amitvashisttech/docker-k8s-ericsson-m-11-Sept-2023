@@ -1,0 +1,125 @@
+   33  docker version 
+   34  systemctl status docker 
+   35  docker run hello-world 
+   36  docker images 
+   37  docker ps 
+   38  docker ps -a 
+   39  docker rmi amitvashist7/myapache-test
+   40  docker images 
+   41  docker rmi 9c7a54a9a43c
+   42  docker rm 35974df74f2a
+   43  docker ps -a 
+   44  docker rmi 9c7a54a9a43c
+   45  docker rm 791ef53ef9ba
+   46  docker ps -a 
+   47  docker images 
+   48  docker rmi 9c7a54a9a43c
+   49  docker ps 
+   50  docker ps -a 
+   51  docker rm bdbde3848113
+   52  docker ps -a 
+   53  docker images 
+   54  docker rmi a416a98b71e2
+   55  docker ps -a 
+   56  docker images 
+   57  docker run hello-world 
+   58  ping -c2 google.com
+   59  docker run busybox 
+   60  docker images 
+   61  docker ps -a 
+   62  docker run busybox 
+   63  docker images 
+   64  docker pull ubuntu 
+   65  docker ps -a 
+   66  docker images 
+   67  docker run busybox 
+   68  docker ps -a 
+   69  docker container ls 
+   70  docker container ls -a 
+   71  docker run --name test-av-1 busybox 
+   72  docker container ls -a 
+   73  docker rm test-av-1
+   74  docker container ls -a 
+   75  cat /etc/os-release 
+   76  docker images 
+   77  docker run --name test-ubuntu-1 ubuntu 
+   78  docker ps -a 
+   79  docker run --name test-ubuntu-1 ubuntu 
+   80  docker run -it --name test-ubuntu-2 ubuntu 
+   81  docker ps 
+   82  docker ps -a
+   83  docker run -it --name test-ubuntu-2 ubuntu 
+   84  docker ps -a 
+   85  docker attach test-ubuntu-2
+   86  docker start test-ubuntu-2
+   87  docker ps 
+   88  docker ps -a 
+   89  docker attach test-ubuntu-2
+   90  docker ps 
+   91  docker start test-ubuntu-2
+   92  docker attach test-ubuntu-2
+   93  history 
+   94  docker run --name test-ubuntu-3 ubuntu ps -ef 
+   95  docker run --name test-ubuntu-3 ubuntu cat /etc/os-releases
+   96  docker run --name test-ubuntu-4 ubuntu cat /etc/os-release
+   97  docker images 
+   98  docker pull ubuntu
+   99  docker images 
+  100  docker pull ubuntu:jammy 
+  101  docker images 
+  102  docker pull ubuntu:20.04
+  103  docker images 
+  104  docker run --name test-ubuntu-5 ubuntu:jammy cat /etc/os-release
+  105  docker run --name test-ubuntu-6 ubuntu:20.04 cat /etc/os-release
+  106  docker ps -a 
+  107  docker rm ad1f5bf3e855
+  108  docker ps -q
+  109  docker ps -qa
+  110  docker rm $(docker ps -qa)
+  111  docker ps -a 
+  112  docker run --name test-ubuntu-6 ubuntu:20.04 cat /etc/os-release
+  113  docker run -d --name test-ubuntu-7 ubuntu:20.04 top
+  114  docker ps 
+  115  docker run -itd --name test-ubuntu-8 ubuntu:20.04 top
+  116  docker ps 
+  117  docker run -itd --name test-ubuntu-9 ubuntu:20.04 top
+  118  docker ps 
+  119  docker logs -f test-ubuntu-9
+  120  docker ps 
+  121  docker exec -it test-ubuntu-9 ps -ef 
+  122  docker exec -it test-ubuntu-9 ls -ltr 
+  123  docker ps 
+  124  docker rm test-ubuntu-9
+  125  docker kill  test-ubuntu-9
+  126  docker ps 
+  127  docker stop test-ubuntu-8
+  128  docker ps 
+  129  docker ps -a 
+  130  docker rm  $(docker ps -qa) 
+  131  ls
+  132  cd docker-k8s-ericsson-m-11-Sept-2023/
+  133  ls
+  134  cd 01-Docker/
+  135  ls
+  136  cp -rf ../../old/01-Docker/02-Docker-CLI-Introduction . 
+  137  ls
+  138  docker ps 
+  139  docker ps -a
+  140  docker run -itd --name test-ubuntu-9 ubuntu:20.04 top
+  141  docker ps 
+  142  docker ps -a 
+  143  docker inspect test-ubuntu-9
+  144  cd 
+  145  ls
+  146  cd docker-k8s-ericsson-m-11-Sept-2023/
+  147  ls
+  148  git pull 
+  149  s
+  150  ls
+  151  history 
+  152  ls
+  153  cd 01-Docker/
+  154  ls
+  155  cd 02-Docker-CLI-Introduction/
+  156  ls
+  157  history > History-2.txt 
