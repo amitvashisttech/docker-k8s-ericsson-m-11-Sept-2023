@@ -13,7 +13,7 @@
   122  cd apache/v1/
   123  ls
   124  docker run -it ubuntu 
-  125  ls
+  125  ls;
   126  cat Dockerfile 
   127  docker build -t my-apache .
   128  docker images 

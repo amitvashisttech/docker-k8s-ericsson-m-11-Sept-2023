@@ -1,0 +1,92 @@
+   31  cd 03-DockerImages/
+   32* docker inspect 
+   33  mkdir nginx 
+   34  cd nginx/
+   35  ls
+   36  mkdir v1 
+   37  ls
+   38  cd v1/
+   39  ls
+   40  docker images 
+   41  ls
+   42  docker build -t my-nginx:v1 .
+   43  docker images 
+   44* docker 
+   45  docker inspect my-nginx:v1 
+   46  ls
+   47  docker images 
+   48  docker run -d my-nginx:v1 
+   49  docker ps 
+   50  docker build -t my-nginx:v1 .
+   51  docker images 
+   52  docker run -d my-nginx:v1 
+   53  docker ps 
+   54  docker kill l $(docker ps -q) 
+   55  docker rm $(docker ps -q) 
+   56  docker rm $(docker ps -qa) 
+   57  ls
+   58  docker images 
+   59  docker rmi  f04e36c7e1e4 
+   60  docker rmi  d61d9ca56cb6
+   61  ls
+   62  docker images 
+   63  docker build -t my-nginx:v1 .
+   64  docker images 
+   65  docker history my-nginx:v1 
+   66  ls
+   67  docker run -d my-nginx:v1 
+   68  docker ps 
+   69  docker inspect ec4218d63d4c
+   70  curl 172.17.0.2
+   71  docker ps 
+   72  docker attach ec4218d63d4c
+   73  docker ps 
+   74  docker run -d my-nginx:v1 
+   75  docker run -d ubuntu top 
+   76  docker ps 
+   77  docker run -itd ubuntu top 
+   78  docker ps 
+   79  docker attach f1964ef40f83
+   80  docker ps 
+   81  docker attach c0bb9b9e47f0
+   82  docker run -d my-nginx:v1 
+   83  docker ps 
+   84  docker exec -it 37280b7ce9ee ps -ef 
+   85  docker ps 
+   86  docker exec -it 37280b7ce9ee ls -ltr /var/www/html/
+   87  docker exec -it 37280b7ce9ee cat /var/www/html/index.nginx-debian.html
+   88  ls
+   89  cd ..
+   90  ls
+   91  cp -rf v1 v2 
+   92  ls
+   93  cd v2/
+   94  ls
+   95  docker exec -it 37280b7ce9ee ls -ltr /var/www/html/
+   96  ls
+   97  docker build -t my-nginx:v2 .
+   98  docker images 
+   99  ls
+  100  docker run -d my-nginx:v2
+  101  docker ps 
+  102  curl 172.17.0.2
+  103  curl 172.17.0.2/info.html
+  104  curl 172.17.0.3/info.html
+  105  docker images 
+  106  docker ps 
+  107  ls
+  108  cd ..
+  109  ls
+  110  cp -rf v2 v3 
+  111  ls
+  112  cd v3/
+  113  ls
+  114  vim info.html 
+  115  vim Dockerfile 
+  116  ls
+  117  docker build -t my-nginx:v3 .
+  118  docker run -d my-nginx:v3
+  119  docker ps 
+  120  docker run -d my-nginx:v3
+  121  docker ps 
+  134  history > recap_history.txt 
