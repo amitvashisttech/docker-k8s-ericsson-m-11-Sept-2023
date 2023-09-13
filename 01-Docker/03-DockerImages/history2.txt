@@ -1,0 +1,73 @@
+## Image Management
+
+  136  docker images 
+  137  docker save my-nginx:v3 > my_image.tar.gz 
+  138  ls
+  139  du -sh my_image.tar.gz 
+  140  cat my_image.tar.gz 
+  141  ls
+  142  scp my_image.tar.gz root@localhost:/tmp 
+  143  cd /tmp/
+  144  ls
+  145  docker load < my_image.tar.gz 
+  146  docker images 
+  147  docker rmi c6eadf7ba409
+  148  docker rmi c6eadf7ba409 --force 
+  149  docker kill $(docker ps -q)
+  150  docker rm $(docker ps -q)
+  151  docker rm $(docker ps -qa)
+  152  docker rmi c6eadf7ba409 --force 
+  153  docker images 
+  154  docker load < my_image.tar.gz 
+  155  docker images 
+  156  docker run -d my-nginx:v3
+  157  docker ps 
+  158  curl 172.17.0.2/info.html
+  159  s
+  160  cd 
+  161  ls
+  162  docker images 
+  163  docker push my-nginx:v1 
+  164  docker login 
+  165  docker push my-nginx:v1 
+  166  docker images 
+  167  docker tag 056752432fa0 amitvashist7/docker-k8s-ericsson-m-11-sept-2023:v1 
+  168  docker tag 49f8bfb6f95b amitvashist7/docker-k8s-ericsson-m-11-sept-2023:v2
+  169  docker tag c6eadf7ba409 amitvashist7/docker-k8s-ericsson-m-11-sept-2023:v3
+  170  docker images 
+  171  docker push amitvashist7/docker-k8s-ericsson-m-11-sept-2023:v1 
+  172  docker push amitvashist7/docker-k8s-ericsson-m-11-sept-2023:v2
+  173  docker push amitvashist7/docker-k8s-ericsson-m-11-sept-2023:v3
+  174  docker logout 
+  175  ls
+  176  docker images 
+  177  history 
+  178  docker kill $(docker ps -q) 
+  179  docker rm $(docker ps -qa) 
+  180  docker images 
+  181  docker images -1
+  182  docker images -q
+  183  docker rmi $(docker images -q)
+  184  docker rmi $(docker images -q) --force 
+  185  docker images 
+  186  docker ps -a 
+  187  docker run -d --name test-1 amitvashist7/docker-k8s-ericsson-m-11-sept-2023:v3
+  188  docker images 
+  189  docker ps 
+  190  curl 172.17.0.2/info.html
+  191  ls
+  192  history docker-k8s-ericsson-m-11-Sept-2023/
+  193  cd docker-k8s-ericsson-m-11-Sept-2023/
+  194  ls
+  195  cd 01-Docker/
+  196  ls
+  197  cd 03-DockerImages/
+  198  ls
+  199  cd apache/
+  200  ls
+  201  mv history.txt ../
+  202  ls
+  203  cd ..
+  204  ls
+  205  history 
+  206  history > history2.txt
