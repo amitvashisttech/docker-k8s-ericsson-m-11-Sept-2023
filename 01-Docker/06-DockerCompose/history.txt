@@ -1,0 +1,64 @@
+   57  cd 06-DockerCompose/
+   58  ls
+   59  cd 00-Setup/
+   60  ls
+   61  chmod +x install-dockercompose.sh 
+   62  sh install-dockercompose.sh 
+   63  ls
+   64  docker-compose version 
+   69  mkdir 01-Nginx
+   70  ls
+   71  cd 01-Nginx/
+   72  ls
+   73  docker-compose up 
+   74  docker-compose up -d 
+   75  docker-compose ps 
+   76  docker-compose kill 
+   77  docker-compose rm
+   78  cd ..
+   79  ls
+   80  cp -rf 01-Nginx 02-myapache
+   81  ls
+   82  docker images 
+   83  ls
+   84  cd 02-myapache/
+   85  ls
+   86  cat docker-compose.yaml 
+   87  docker-compose up -d 
+   88  docker-compose ps 
+   89  ls
+   90  cd ..
+   91  ls
+   92  cp -rf 02-myapache 03-Build
+   93  ls
+   94  cd 02-myapache/
+   95  ls
+   96  docker-compose kill
+   97  docker-compose rm
+   98  ls
+   99  cp -rf ../../03-DockerImages/apache/v2/* . 
+  100  ls
+  101  docker-compose up -d 
+  102  docker-compose kill 
+  103  docker-compose rm
+  104  cd ..
+  105  ls
+  106  cd 03-Build/
+  107  ls
+  108  docker-compose up -d 
+  109  docker ps 
+  110  ls
+  111  vim index.html 
+  112  docker-compose up -d 
+  113  docker images 
+  114  docker ps 
+  115  docker-compose up -d 
+  116  docker-compose up -d --build
+  117  docker-compose ps 
+  118  docker-compose kill 
+  119  docker-compose rm
+  120  docker images 
+  121  docker ps
+  122  docker-compose rmi
+  123  docker-compose --help
+  124  docker-compose images 

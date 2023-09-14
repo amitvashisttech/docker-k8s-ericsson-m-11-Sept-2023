@@ -1,0 +1,43 @@
+  133  cd 07-DockerRegistry
+  134  ls
+  135  mkdir /opt/dockerregistory -p 
+  136  ls
+  137  cd 07-DockerRegistry/
+  138  ls
+  139  docker-compose up -d 
+  141  docker-compose up -d 
+  142  docker-compose ps 
+  143  cd /opt/dockerregistory/
+  144  ls
+  145  docker ps 
+  146  docker images 
+  147  docker tag 873386f263ac docker.example.com:5000/myapache:v1 
+  148  docker images 
+  149  docker push docker.example.com:5000/myapache
+  150  docker push docker.example.com:5000/myapache:v1
+  151  hostname -f 
+  152  ping docker.example.com
+  153  docker images 
+  154  docker rmi  myapache docker.example.com:5000/myapache:v1 
+  155  docker images 
+  156  docker tag a416a98b71e2 docker.example.com:5000/busybox
+  157  docker tag c6b84b685f35 docker.example.com:5000/ubuntu
+  158  docker push docker.example.com:5000/ubuntu
+  159  docker push docker.example.com:5000/busybox
+  160  docker ps 
+  161  docker images 
+  162  docker rmi docker.example.com:5000/busybox busybox docker.example.com:5000/ubuntu ubuntu
+  163  docker images 
+  164  docker run -it docker.example.com:5000/ubuntu
+  165  docker images 
+  166  cd 
+  167  cd /var/lib/docker/
+  168  ls
+  169  cd image/
+  170  ls
+  171  cd overlay2/
+  172  ls
+  173  cd ..
+  174  cd 
+  175  ls
+  176  docker run -it docker.example.com:5000/ubuntu:v3 

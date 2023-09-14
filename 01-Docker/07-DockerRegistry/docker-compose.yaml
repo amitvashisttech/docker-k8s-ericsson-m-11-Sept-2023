@@ -1,0 +1,13 @@
+---
+
+version: '2'
+
+services:
+  dockerregistry:
+    image: registry:2
+    container_name: dockerregistry
+    ports:
+      - '5000:5000'
+    volumes:
+      - /opt/dockerregistory:/var/lib/registry
+    restart: always
