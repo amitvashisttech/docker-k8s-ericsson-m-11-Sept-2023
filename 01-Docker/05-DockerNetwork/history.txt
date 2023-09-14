@@ -1,0 +1,52 @@
+    1  docker images 
+    2  docker run -d --name network-test-1 amitvashist7/docker-k8s-ericsson-m-11-sept-2023:v3 
+    3  docker ps 
+    4  docker inspect 44297ae5101c
+    5  curl 172.17.0.2
+    6  docker ps 
+    7  docker run -d -p 80:80 --name network-test-2 amitvashist7/docker-k8s-ericsson-m-11-sept-2023:v3 
+    8  docker ps 
+    9  apt-get install net-tools -y 
+   10  netstat -tulnp 
+   11  docker run -d -p 80:80 --name network-test-3 amitvashist7/docker-k8s-ericsson-m-11-sept-2023:v3 
+   12  netstat -tulnp 
+   13  docker run -d -p 81:80 --name network-test-4 amitvashist7/docker-k8s-ericsson-m-11-sept-2023:v3 
+   14  docker ps 
+   15  docker run -d -p 81:80 -p 3306:3306 --name network-test-5 amitvashist7/docker-k8s-ericsson-m-11-sept-2023:v3 
+   16  docker run -d -p 82:80 -p 3306:3306 --name network-test-6 amitvashist7/docker-k8s-ericsson-m-11-sept-2023:v3 
+   17  docker ps 
+   18  netstat -tulnp 
+   19  docker run -d -P --name network-test-7 amitvashist7/docker-k8s-ericsson-m-11-sept-2023:v3 
+   20  docker ps 
+   21  ls
+   22  cd docker-k8s-ericsson-m-11-Sept-2023/
+   23  ls
+   24  cd 01-Docker/
+   25  ls
+   26  cd 03-DockerImages/apache/v5/
+   27  ls
+   28  cat MyDockerfile 
+   29  ls
+   30  docker build -t myapache . 
+   31  docker build -t myapache -f MyDockerfile .
+   32  ls
+   33  docker images 
+   34  cd 
+   35  docker run -d -P --name network-test-8 myapache  
+   36  docker ps 
+   37  docker exec -it myapache bash
+   38  docker exec -it network-test-8 bash 
+   39  docker ps 
+   40  docker kill $(docker ps -q) 
+   41  docker start network-test-1 
+   42  docker ps 
+   43  docker start network-test-2
+   44  docker ps 
+   45  netstat -tulnp 
+   46  systemctl status docker 
+   47  ls
+   48  cd docker-k8s-ericsson-m-11-Sept-2023/
+   49  ls
+   50  cd 01-Docker/05-DockerNetwork/
+   51  ls
+   52  history > history.txt 

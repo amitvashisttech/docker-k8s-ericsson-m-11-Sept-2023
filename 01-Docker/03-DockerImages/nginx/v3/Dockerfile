@@ -13,7 +13,7 @@ RUN apt-get install nginx -y
 # Deploy a custom webpage
 COPY info.html /var/www/html/info.html
 
-# Expos 
+# Expose
 EXPOSE 80 
 
 # Excute the following command whenever container created
