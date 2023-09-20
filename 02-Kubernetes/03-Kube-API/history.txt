@@ -1,0 +1,19 @@
+   81  cd /etc/kubernetes/
+   82  ls
+   83  cd manifests/
+   84  ls
+   85  cat kube-apiserver.yaml 
+   86  vim kube-apiserver.yaml 
+   87  d 
+   88  cd 
+   89  kubectl cluster-info
+   90  kubectl version
+   91  kubectl version --short
+   92  kubectl api-versions
+   93  ls
+   94  cd docker-k8s-ericsson-m-11-Sept-2023/
+   95  ls
+   96  cd 02-Kubernetes/
+   97  ls
+   98  mkdir 03-Kube-API
+   99  history > 03-Kube-API/history.txt 
