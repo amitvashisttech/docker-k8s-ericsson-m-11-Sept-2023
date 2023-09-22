@@ -2,7 +2,7 @@
 
 ## Use Cases.
 
-Master  worker1 ( amit: vashist )  worker2 worker3 worker4 ( amit: vashist )
+Master  worker1 ( amit: vashist )  worker2 worker3 worker4 
        
 mydepoyment-> Replicas= 3 
 nodeselector
@@ -21,17 +21,18 @@ Case 3 ( In the meanwhile someone any regular deployment without any nodeselecto
 Case 4 : What if the worker1 goes off / shutdown or anything wrong happen. 
 --> All my ( MyDeployment will be stuck on a pending state -> bz non of the remaining worker is having the right label required by mydepoyment ) 
 
-Solution -> Lables two worker with same lables, hence we can avoid single point of failours 
+Solution -> Lables the two worker with same lables, hence we can avoid single point of failours
+         -> Let's label worker4 with the respective label ( amit: vashist ) 
          -> All my ( MyDeployment will be scheduled on worker4 ) 
 
 Case 5 : If some remove the nodes labels then what will happend to my existing mydepoyment pods. 
-        -> All my existing pod will be still running whereever they are, untill any scaling opertaion will kickoff. 
+        -> All my existing pod will be still running where ever they are, untill any scaling opertaion will kickoff. 
 
 Case 6 : Can we have a multiple Labels Selectors 
         -> Yes 
 
 
-## Commans 
+## Commands 
 ``` 
 
     2  kubectl get nodes 
