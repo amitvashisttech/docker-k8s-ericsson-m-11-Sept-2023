@@ -1,29 +1,37 @@
-
-   90  vim reverseproxy.conf
-   91  kubectl get configmap
-   92  kubectl create configmap nginx-config --from-file=reverseproxy.conf -o yaml --dry-run
-   93  kubectl get configmap
-   94  kubectl create configmap nginx-config --from-file=reverseproxy.conf -o yaml --dry-run > ConfigMap.yaml
-   95  vim ConfigMap.yaml
-   96  ls
-   97  cd ..
-   98  ls
-   99  kubectl create -f 13-ConfigMap/
-  100  kubectl get configmap
-  101  kubectl describe configmap nginx-config
-  102  kubectl get pods
-  103  kubectl describe pods helloworld-nginx
-  104  kubectl get svc
-  105  kubectl exec -it  helloworld-nginx -c nginx -- bash
-  106  ls
-  107  cd k8s-paypal-28-Dec-2020; git add . ; git commit -m "13-ConfigMap"; git push
-  108  ls
-  109  cd 12-Service-Discovery/
-  110  ls
-  111  vim helloworld-app-deployment.yml
-  112  ls
-  113  cd ..
-  114  ls
-  115  history
-  116  ls
-  117  cd 13-ConfigMap/
+8  cd 12-ConfigMap/
+    9  ls
+   10  cat 1-ConfigMap.yaml
+   11  ls
+   12  cat reverseproxy.conf
+   13  ls
+   14  kubectl get configmap
+   15  kubectl create configmap nginx-config --help
+   16  kubectl create configmap nginx-config --from-file=reverseproxy.conf
+   17  kubectl  get configmap
+   18  kubectl  describe configmap nginx-config
+   19  ls
+   20  kubectl create configmap nginx-config --from-file=reverseproxy.conf --dry-run
+   21  kubectl create configmap nginx-config --from-file=reverseproxy.conf --dry-run -o yaml
+   22  kubectl create configmap nginx-config --from-file=reverseproxy.conf --dry-run -o yaml  > 1-ConfigMap.yaml
+   23  ls
+   24  cat 1-ConfigMap.yaml
+   25  vim 1-ConfigMap.yaml
+   26  ls
+   27  kubectl  apply -f 1-ConfigMap.yaml
+   28  ls
+   29  cat 2-nginx-pod.yml
+   30  kubectl  apply -f 2-nginx-pod.yml
+   31  kubectl  get configmap
+   32  kubectl  get pods
+   33  kubectl  get pods -w
+   34  kubectl  get pods
+   35  ls
+   36  kubectl  apply -f 3-nginx-service.yaml
+   37  kubectl  get svc
+   38  cat 3-nginx-service.yaml
+   39  kubectl  describe svc helloworld-nginx-service
+   40  s
+   41  ls
+   42  kubectl  get pods
+   43  kubectl  describe pod helloworld-nginx
+   44  kubectl  exec -it helloworld-nginx -c nginx -- bash
