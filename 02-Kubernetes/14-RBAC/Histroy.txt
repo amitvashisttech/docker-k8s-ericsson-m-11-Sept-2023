@@ -1,0 +1,73 @@
+  100  cd 14-RBAC/
+  101  ls
+  102  kubectl create role pod-reader --help
+  103  kubectl create role pod-reader --verb=get,list,watch --resource=pods --dry-run -o yaml 
+  104  kubectl create role pod-reader --verb=get,list,watch --resource=pods --dry-run -o yaml > 01-pod-reader-role.yaml 
+  105  ls
+  106  cat 01-pod-reader-role.yaml 
+  107  kubectl  apply -f 01-pod-reader-role.yaml 
+  108  kubectl  get roles 
+  109  kubectl  get rolebindings 
+  110  kubectl create rolebinding pod-reader-binding-amit --help
+  111  kubectl create rolebinding pod-reader-binding-amit --role=pod-reader --user=amit --dry-run -o yaml 
+  112  kubectl create rolebinding pod-reader-binding-amit --role=pod-reader --user=amit --dry-run -o yaml > 02-read-pod-binding.yaml 
+  113  kubectl  apply -f 02-read-pod-binding.yaml 
+  114  kubectl  get roles 
+  115  kubectl  get rolebindings 
+  116  kubectl config get-contexts 
+  117  kubectl config use-context amit@kubernetes
+  118  kubectl config get-contexts 
+  119  kubectl  get pods 
+  120  kubectl  get deploy
+  121  kubectl  get pods 
+  122  kubectl  list pods 
+  123  kubectl  get pods -w
+  124  kubectl  delete pods helloworld-deployment-5fcc4dd9c-4qc6s
+  125  kubectl  get svc 
+  126  kubectl  get pods 
+  127  kubectl  get pods -n kube-system 
+  128  ls
+  129  kubectl config get-contexts 
+  130  kubectl config use-contexts kubernetes-admin@kubernetes
+  131  kubectl config use-context kubernetes-admin@kubernetes
+  132  kubectl config get-contexts 
+  133  kubectl  get pods 
+  134  kubectl get clusterroles 
+  135  kubectl describe clusterroles view
+  136  ls
+  137  kubectl create clusterrolebinding view-only-amit --clusterrole=view --user=amit --dry-run -o yaml 
+  138  kubectl create clusterrolebinding view-only-amit --clusterrole=view --user=amit 
+  139  kubectl  get clusterrolebindings
+  140  kubectl  describe clusterrolebindings view-only-amit
+  141  kubectl config use-context amit@kubernetes
+  142  kubectl config get-contexts 
+  143  kubectl  get pods -n kube-system 
+  144  kubectl  get pods -A 
+  145  kubectl  get pods,svc,deploy -A 
+  146  kubectl  delete pod helloworld-deployment-5fcc4dd9c-4qc6s
+  147  kubectl config use-context kubernetes-admin@kubernetes
+  148  kubectl  get clusterrolebindings 
+  149  kubectl  delete clusterrolebindings  view-only-amit
+  150  kubectl create clusterrolebinding cluster-admin-amit --clusterrole=cluster-admin --user=amit 
+  151  ls
+  152  kubectl config use-context amit@kubernetes
+  153  kubectl  get all -A 
+  154  kubectl  delete  pod/helloworld-deployment-5fcc4dd9c-4qc6s
+  155  kubectl config use-context kubernetes-admin@kubernetes
+  156  ls
+  157  kubectl auth can-i get pods 
+  158  kubectl auth can-i get pods --user=amit
+  159  kubectl auth can-i get pods --user=vashist
+  160  kubectl delete clusterrolebinding cluster-admin-amit 
+  161  kubectl auth can-i get pods --user=amit
+  162  kubectl auth can-i get delete --user=amit
+  163  kubectl auth can-i  delete --user=amit
+  164  kubectl auth can-i  delete pod --user=amit
+  165  kubectl auth can-i get pods --user=amit
+  166  kubectl  get rolebinding 
+  167  kubectl auth can-i delete pods --user=amit
+  168  kubectl auth can-i get pods --user=amit
+  169  kubectl auth can-i get pods -n kube-system --user=amit
+  170  ls
+  171  history 
+  172  history > Histroy.txt 
